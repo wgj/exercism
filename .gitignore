@@ -1,1 +1,5 @@
 *test*
+
+# Do not include exercism.io README, but include repo's
+**/README.md
+!/README.md
