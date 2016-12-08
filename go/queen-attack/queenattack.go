@@ -77,7 +77,7 @@ func diagnal(w, b, dir string) bool {
 		// Check adjacent space.
 		w = fmt.Sprintf("%s%s", string(int(w[0])+x), string(int(w[1])+y))
 		// Check if we are off the board.
-		if w[0] < byte(97) || w[0] > byte(104) || w[1] < byte(49) || w[1] > byte(56) {
+		if w[0] < 'a' || w[0] > 'h' || w[1] < '1' || w[1] > '8' {
 			break
 		}
 	}
