@@ -7,18 +7,22 @@ import (
 const testVersion = 1
 
 func IsPangram(s string) bool {
-	// If empty string, return true.
-	if s == "" {
-		return false
-	}
+	// Create an array of int, size 26
+	var alphabet [26]int
 	s = strings.ToLower(s)
-	// For every letter in the alphabet
-	for i := 'a'; i < 'z'+1; i++ {
-		// Check if s contains the letter, if false, return false.
-		if !strings.Contains(s, string(i)) {
-			return false
+	// For every char in s
+	for _, v := range s[:] {
+		if v >= 'a' && v <= 'z' {
+			// 'a' starts at 97 in ASCII
+			alphabet[v-97]++
 		}
 	}
 
+	for _, v := range alphabet {
+		if v == 0 {
+			// If alphabet[i] is 0, then it wasn't in s.
+			return false
+		}
+	}
 	return true
 }
