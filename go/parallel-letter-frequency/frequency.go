@@ -26,7 +26,7 @@ func ConcurrentFrequency(s []string) FreqMap {
 			for k, v := range m {
 				masterMap[k] += v
 			}
-			wg.Done()
+			defer wg.Done()
 		}()
 	}
 	wg.Wait()
