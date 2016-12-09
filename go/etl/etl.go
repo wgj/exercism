@@ -14,7 +14,5 @@ func Transform(m map[int][]string) map[string]int {
 			results[strings.ToLower(letter)] = k
 		}
 	}
-
 	return results
-
 }
