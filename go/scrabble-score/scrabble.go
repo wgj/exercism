@@ -6,11 +6,10 @@ import (
 
 const testVersion = 4
 
-// 'a' is an int32.
-var scorem map[int32]int
+var scorem map[rune]int
 
 func init() {
-	scorem = map[int32]int{
+	scorem = map[rune]int{
 		'a': 1,
 		'b': 3,
 		'c': 3,
